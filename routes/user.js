@@ -17,7 +17,7 @@ router.post('/login',(req,res)=>{
 
 
 router.get('/addstudent',(req,res)=>{
-    res.render('addStudent');
+    res.render('addstudent');
 })
 
 router.post('/add-student',(req,res)=>{
