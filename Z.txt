@@ -1,0 +1,34 @@
+Acc  ----> loudinary
+
+npm i multer
+npm i cloudinary \
+
+admin and user interface alag alag by single login --> khud pehchanega agar admin to admin ka page or agar student ho to student details wla page aana chiye
+
+
+admin -->   add student , course
+student --> course option,
+
+
+
+
+
+
+
+
+EC2 --> install node.js mongoDB git,
+
+sudo su
+
+
+
+
+
+
+Change -- > git add -a, git commit -m "message", git push
+ec2 --> git pull , add student and done
+
+Assign -->  1 admin login kre to koi bhi signup na kr ske (student) .
+            2 admin will add the student one new field will be add  i.e. email field 
+            3 Only those student can  login which are created by admin. 
+                example --> student email -> xyz@gmail.com by default pass ->1234 than student will login

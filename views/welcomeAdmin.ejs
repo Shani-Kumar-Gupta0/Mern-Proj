@@ -1,0 +1,110 @@
+<%- include('./base/header.ejs') %>
+
+
+<style>
+  .btn{
+  
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.322);
+  transition: all 0.4s;
+    }
+  .btn:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
+    transition: all 0.4s; 
+  }
+  .heading{
+    color: aliceblue;
+  }
+</style>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="/views/home.ejs">RDEC</a>
+
+    <!-- Left-side links -->
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/addstudent">Add Student</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/list-student">List Student</a>
+      </li>
+    </ul>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Right-side links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/settings">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+ <div class="container">
+        <div class="alert text-center bg-dark my-3">
+            <h5 class="heading">Student List</h5>   
+        </div>
+     </div>
+
+ <div class="container">
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th> student photo</th>
+                    <th>S.No</th>
+                    <th>RollNo</th>
+                    <th>Name</th>
+                    <th>Father Name</th>
+                    <th>Mother Name</th>
+                    <th>Course</th>
+                    <th>Branch</th>
+                    <th>yearOfAddmission</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <%  students.forEach((student, index) =>{ %>
+                    <tr>
+                        <td><img src="<%= student.studentImage %>" width='100px' height='100px'></td>
+                        <td><%= index + 1 %></td>
+                        <td><%= student.rollNo %></td>
+                        <td><%= student.studentName %></td>
+                        <td><%= student.fatherName %></td>
+                        <td><%= student.motherName %></td>
+                        <td><%= student.course %></td>
+                        <td><%= student.branch %></td>
+                        <td><%= student.yearOfAddmission %></td>
+                        <td>
+                            <a href="/edit/student/page/<%= student._id %>" class="btn">Edit</a>
+                            <a href="/delete/student/<%= student._id %>" class="btn">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+     </div>
+
+<%- include('./base/footer.ejs') %>

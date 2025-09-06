@@ -1,0 +1,176 @@
+<%- include('./base/header.ejs') %> 
+<%- include('./base/nav.ejs') %>
+
+<style>
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #d9e5fc;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .sign-card {
+    background-color: #f7f1ff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6366f1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #4f46e5;
+  }
+</style>
+
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: 100vh">
+
+  <form action="/add/student" method="post" enctype="multipart/form-data">
+    <div class="p-5 w-100 justify-content-center">
+      <h2 class="card-title text-center mb-4">Add Student</h2>
+    </div><br><br><br>
+
+    <h2 class="card-title text-center mb-4">Sign Up</h2>
+
+    <!-- rollNo -->
+    <div class="mb-3">
+      <label for="rollNo" class="form-label fw-bold">rollNo</label>
+      <input
+        type="text"
+        id="rollNo"
+        class="form-control"
+        name="rollNo"
+        placeholder="Enter your rollNo"
+        required
+      />
+    </div>
+
+    <!-- Student Name-->
+    <div class="mb-3">
+      <label for="lastName" class="form-label fw-bold">Student Name</label>
+      <input
+        type="text"
+        id="studentName"
+        class="form-control"
+        name="studentName"
+        placeholder="Enter your Student Name"
+        required
+      />
+    </div>
+
+    <!-- fatherName -->
+    <div class="mb-3">
+      <label for="fatherName" class="form-label fw-bold">fatherName</label>
+      <input
+        type="fatherName"
+        id="fatherName"
+        class="form-control"
+        name="fatherName"
+        placeholder="Enter your fatherName"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="motherName" class="form-label fw-bold">motherName</label>
+      <input
+        type="motherName"
+        id="motherName"
+        class="form-control"
+        name="motherName"
+        placeholder="Enter your motherName"
+        required
+      />
+    </div>
+
+    <!-- course -->
+    <div class="mb-3">
+      <label for="course" class="form-label fw-bold">course</label>
+      <input
+        type="course"
+        id="course"
+        class="form-control"
+        name="course"
+        placeholder="Course Name"
+      />
+    </div>
+
+    <!-- branch -->
+    <!-- branch -->
+    <div class="mb-3">
+      <label for="branch" class="form-label fw-bold">Branch</label>
+      <select name="branch" id="branch" class="form-control" required>
+        <option value="">Choose your branch</option>
+        <option value="CSE">CSE</option>
+        <option value="AI">AI</option>
+        <option value="IT">IT</option>
+      </select>
+    </div>
+
+    <!-- branch -->
+    <div class="mb-3">
+      <label for="yearOfAddmission" class="form-label fw-bold"
+        >Year Of Addmission</label
+      >
+      <input
+        type="yearOfAddmission"
+        id="yearOfAddmission"
+        class="form-control"
+        name="yearOfAddmission"
+        placeholder="Year"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="studentImage" class="form-label fw-bold">Select Student Image</label>
+      <input type="file" name="studentImage" class="form-control" >
+    </div>
+
+    <!-- Sign Up Button -->
+    <button type="submit" class="btn btn-custom-signup w-100 fw-bold">
+      Add Student
+    </button>
+  </form>
+</div>
+
+<%- include('./base/footer.ejs') %>

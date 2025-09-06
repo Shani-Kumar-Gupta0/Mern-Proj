@@ -1,0 +1,114 @@
+<%- include('./base/header.ejs') %>
+
+<style>
+  body {
+  position: relative;
+  min-height: 60vh;
+  background: url("./bg-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  background: linear-gradient(135deg, #2125298a, #2125298a);/* soft light blue gradient */
+  }
+
+  .login-card {
+    background-color: #f9f5ff; /* soft lavender */
+    border-radius: 20px;       /* rounded edges */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* color: #374151; */
+
+  }
+
+  .login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-custom-login {
+    background-color: #6366f1; /* indigo */
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom-login:hover {
+    background-color: #4f46e5;
+    transform: scale(1.05);
+  }
+
+  .btn-custom-signup {
+    background-color: #10b981; /* teal/green */
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom-signup:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+  }
+
+  .card-title {
+    font-weight: 700;
+    color: #374151;
+  }
+
+  .form-control {
+    border-radius: 12px;
+  }
+img{
+  position: relative;
+  width: 40%;
+  border-radius: 50%;
+
+
+}
+.black{
+  color: #374151;
+}
+
+</style>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+  <div class="card login-card shadow-lg overflow-hidden" style="width: 700px; max-width: 90%;">
+    <div class="row g-0">
+
+      <!-- Left Side: Login Form -->
+      <div class="col-md-6 d-flex align-items-center">
+        <div class="p-5 w-100">
+          <h2 class="card-title text-center mb-4">Login</h2>
+
+          <form action="/login" method="post">
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label fw-bold black">Email</label>
+              <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label class="form-label fw-bold black">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit" class="btn btn-custom-login w-100 fw-bold">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right Side: Signup Prompt -->
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-5" style="background-color: #eef2ff;">
+        <img src="https://imgs.search.brave.com/ujuq2He6aoc-ERZoX4PIooEJn-CVzfX1luf6ycQmGz0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c3RhdGljLWNvbnRl/bnRzLnlvdXRoNHdv/cmsuY29tL3VuaXZl/cnNpdHkvRG9jdW1l/bnRzL0NvbGxlZ2Vz/L2NvbGxlZ2VMb2dv/LzkzOTkuanBn" alt="signup" >
+        <h3 class="fw-bold mb-3 text-dark">New Here?</h3>
+
+        <p class="text-muted mb-4">Create an account to access more features.</p>
+        <a href="/user/signup" class="btn btn-custom-signup fw-bold px-4 py-2">Sign Up</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include('./base/footer.ejs') %>
