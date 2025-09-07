@@ -2,6 +2,15 @@
 
 
 <style>
+  body{
+    background: #2125298a;
+
+  }
+    .logo{
+        position: relative;
+        border-radius: 50%;
+        
+    }
   .btn{
   
   border: none;
@@ -23,7 +32,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <!-- Brand -->
-    <a class="navbar-brand fw-bold" href="/views/home.ejs">RDEC</a>
+    <a class="navbar-brand fw-bold" href="/">RDEC</a>
 
     <!-- Left-side links -->
     <ul class="navbar-nav me-auto">
@@ -72,15 +81,16 @@
         <table class="table text-center">
             <thead>
                 <tr>
-                    <th> student photo</th>
+                    <th>StudentPhoto</th>
                     <th>S.No</th>
                     <th>RollNo</th>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Father Name</th>
                     <th>Mother Name</th>
                     <th>Course</th>
                     <th>Branch</th>
-                    <th>yearOfAddmission</th>
+                    <th>YearOfAddmission</th>
                     <th>Actions</th>
 
                 </tr>
@@ -88,10 +98,11 @@
             <tbody>
                 <%  students.forEach((student, index) =>{ %>
                     <tr>
-                        <td><img src="<%= student.studentImage %>" width='100px' height='100px'></td>
+                        <td><img src="<%= student.studentImage %>" width='70px' height='70px' class="logo"></td>
                         <td><%= index + 1 %></td>
                         <td><%= student.rollNo %></td>
                         <td><%= student.studentName %></td>
+                        <td><%= student.email %></td>
                         <td><%= student.fatherName %></td>
                         <td><%= student.motherName %></td>
                         <td><%= student.course %></td>

@@ -98,7 +98,9 @@ async function saveEditStudent(req, res) {
         //    console.log(req.body);
         student.rollNo = req.body.rollNo;
         student.studentName = req.body.studentName;
+        student.fatherName = req.body.email;
         student.fatherName = req.body.fatherName;
+        student.fatherName = req.body.motherName;
         student.course = req.body.course;
         student.branch = req.body.branch;
         student.yearOfAddmission = req.body.yearOfAddmission;

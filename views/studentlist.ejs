@@ -2,6 +2,9 @@
 <%- include('./base/nav.ejs') %>
 
 <style>
+    body{
+    background: #2125298a;
+  }
     .btn{
   border: none;
   outline: none;
@@ -37,11 +40,12 @@
                     <th>S.No</th>
                     <th>RollNo</th>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Father Name</th>
                     <th>Mother Name</th>
                     <th>Course</th>
                     <th>Branch</th>
-                    <th>yearOfAddmission</th>
+                    <th>YearOfAddmission</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -52,6 +56,7 @@
                         <td><%= index + 1 %></td>
                         <td><%= student.rollNo %></td>
                         <td><%= student.studentName %></td>
+                        <td><%= student.email %></td>
                         <td><%= student.fatherName %></td>
                         <td><%= student.motherName %></td>
                         <td><%= student.course %></td>

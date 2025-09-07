@@ -20,9 +20,11 @@ async function addUser(req, res) {
 async function doLogin(req,res){
     try{
       console.log(req.body,'req.body')
-      let user = await User.findOne({email:req.body.email})
-      console.log(user)
-      if(user){
+      let user = await User.findOne({email:req.body.email});
+      let student =  await Student.findOne({email : req.body.email})
+      console.log(user);
+      console.log("Student = " ,student);
+      if(user && user.userType === "Admin"){
            let validPassword = await bcrypt.compare(req.body.password, user.password)
            if(validPassword){
             let students = await Student.find({});
@@ -32,7 +34,14 @@ async function doLogin(req,res){
            }else{
             res.end("invalid login/Password...")
            }
-      }else{
+      }else if (student) {
+        if (req.body.password === "111111") {
+            res.render('welcomeStudent', {student : student})
+        }else{
+            res.end("invalid login/Password...")
+           }
+      }
+      else{
         console.log("no user found, please try login instead")
       }
     }catch(err){

@@ -1,7 +1,98 @@
 <%- include('./base/header.ejs') %>
+<style>
+  body {
+    background: #2125298a;
 
+  }
+  .btn {
+    display: block;
+    margin: auto;
+    width: 5rem;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: aliceblue;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.322);
+    transition: all 0.4s;
+  }
+  .btn:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
+    background: #2125298a;
+    transition: all 0.4s;
+  }
+  .heading {
+    color: aliceblue;
+  }
+  th{
+    font-weight: 500;
+    font-size: large;
+  }
+  td{
+    font-weight: 500;
+  }
 
-      <h1>Welcome Student Page</h1>
+  .logo {
+    position: relative;
+    border-radius: 50%;
+  }
+</style>
+<h1 style="text-align: center"></h1>
 
+<div class="container">
+  <h3 class="heading alert text-center bg-dark">
+    Welcome, <%= student.studentName %>!
+  </h3>
+</div>
+<div class="container">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th>StudentPhoto</th>
+        <td>
+        <img
+          src="<%= student.studentImage %>"
+          alt="studentImage"
+          width="70px"
+          height="70px"
+          class="logo"
+        />
+      </td>
 
-  <%- include('./base/footer.ejs') %>
+      <tr>
+        <th>RollNo</th>
+        <td><%= student.rollNo %></td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td><%= student.studentName %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= student.email %></td>
+      </tr>
+      <tr>
+        <th>Father Name</th>
+        <td><%= student.fatherName %></td>
+      </tr>
+      <tr>
+        <th>Mother Name</th>
+       <td><%= student.motherName %></td>
+      </tr>
+      <tr>
+        <th>Course</th>
+        <td><%= student.course %></td>
+      </tr>
+      <tr>
+        <th>Branch</th>
+        <td><%= student.branch %></td>
+      </tr>
+      <tr>
+        <th>YearOfAddmission</th>
+        <td><%= student.yearOfAddmission %></td>
+      </tr>
+    </thead>
+  </table>
+    <a href="/logout" class="btn ">Logout</a>
+</div>
+<%- include('./base/footer.ejs') %>

@@ -2,13 +2,14 @@
 <%- include('./base/nav.ejs') %>
 
 <style>
-  body,
+  body{
+    background: #2125298a;
+
+  }
   html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #d9e5fc;
   }
 
   .container {
@@ -51,7 +52,6 @@
     padding: 12px;
     border: none;
     border-radius: 10px;
-    background-color: #6366f1;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -59,7 +59,7 @@
   }
 
   button:hover {
-    background-color: #4f46e5;
+    background-color: #ccc;
   }
 </style>
 
@@ -70,7 +70,7 @@
   <form action="/add/student" method="post" enctype="multipart/form-data">
     <div class="p-5 w-100 justify-content-center">
       <h2 class="card-title text-center mb-4">Add Student</h2>
-    </div><br><br><br>
+    </div><br><br><br><br><br><br><br><br><br>
 
     <h2 class="card-title text-center mb-4">Sign Up</h2>
 
@@ -99,6 +99,18 @@
         required
       />
     </div>
+    <div class="mb-3">
+      <label for="email" class="form-label fw-bold">Email </label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        name="email"
+        placeholder="Enter Student Email id "
+        required
+      />
+    </div>
+    
 
     <!-- fatherName -->
     <div class="mb-3">
